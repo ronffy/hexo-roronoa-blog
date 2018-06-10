@@ -8,10 +8,10 @@ subtitle: 我的code，一块砖一块砖垒成未来的样子
 description: 
 keywords: javascript,程序员,程序猿,码农,伪足球迷,海贼迷
 author: ronffy
-author-img: /img/myface.png
+author-img: /img/mylogo.png
 language: Chinese
 timezone:
-favicon: /img/myface.png
+favicon: /img/mylogo.png
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -34,7 +34,7 @@ skip_render:
 # 网站综合内容设置：
 SEOTitle: ronffy小贼先生的博客 | ronffy's Blog
 header-img: img/header-img.png
-sidebar-avatar: img/myface.jpeg
+sidebar-avatar: img/mylogo.jpeg
 email: whrjob@sina.com
 
 # SNS settings
