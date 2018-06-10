@@ -1,6 +1,5 @@
 ---
 title: 《去TM的世界》
-layout: 
 date: 2017-12-09 13:07:00
 header-img: /img/post/fackingworld/header-img.jpg
 content-img: /img/post/fackingworld/content.jpg

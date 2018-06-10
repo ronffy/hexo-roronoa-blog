@@ -1,10 +1,8 @@
 ---
 title: Axios源码深度剖析 - XHR篇
-layout: 
 date: 2018-05-06 13:30:00
 header-img: /img/header-img.png
-content-img: /img/content1.jpeg
-author-img: /img/myface.png
+content-img: /img/post/axios/content.jpeg
 describe: axios 是一个基于 Promise 的http请求库，本文将从源码深度剖析其实现原理
 tags: [axios, promise, xhr, javascript]
 ---
