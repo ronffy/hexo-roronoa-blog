@@ -1,17 +1,8 @@
-# roonly.github.io
-my github blog
+## 我的博客后台
+
+## 介绍
+
+-  基于[hexo](https://github.com/hexojs/hexo)的博客系统
+-  使用[hexo-theme-showtext](https://github.com/ronffy/hexo-theme-showtext)精简主题
 
 
-
-## 目录
-
-```
-.
-├── _config.yml           # 网站的 配置 信息, 在此配置大部分的参数
-├── package.json
-├── scaffolds
-├── source
-|   ├── _drafts
-|   └── _posts
-└── themes
-```

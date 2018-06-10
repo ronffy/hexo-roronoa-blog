@@ -1,38 +1,24 @@
 ---
 title: Hello World
+date: 2018-06-07 17:03:00
+header-img: /img/header-img.png
+content-img: /img/content1.jpeg
+author-img: /img/myface.png
+describe: 一个要成为海贼王的男人
+tags: [javascript, onepiece]
 ---
-Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
+## One Piece
 
-## Quick Start
+比如说有一块肉，英雄会把它分给别人，而海贼会拿它来开宴会。 
+我喜欢吃肉！ 
+我不是英雄，我只做我想做的事，保护我想要保护的人而已。
 
-### Create a new post
+```javascript
+class C {
+  f(){
+    this.name = 'luffy';
+  }
+}
 
-``` bash
-$ hexo new "My New Post"
+let f = () => {}
 ```
-
-More info: [Writing](https://hexo.io/docs/writing.html)
-
-### Run server
-
-``` bash
-$ hexo server
-```
-
-More info: [Server](https://hexo.io/docs/server.html)
-
-### Generate static files
-
-``` bash
-$ hexo generate
-```
-
-More info: [Generating](https://hexo.io/docs/generating.html)
-
-### Deploy to remote sites
-
-``` bash
-$ hexo deploy
-```
-
-More info: [Deployment](https://hexo.io/docs/deployment.html)

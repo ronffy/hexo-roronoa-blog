@@ -6,14 +6,15 @@
 title: 小贼先生
 subtitle: 我的code，一块砖一块砖垒成未来的样子
 description: 
-keywords: javascript,react,微信小程序,程序员,程序猿,码农
-author: roonly
+keywords: javascript,程序员,程序猿,码农,伪足球迷,海贼迷
+author: ronffy
 language: Chinese
 timezone:
+favicon: /img/myface.png
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://roonly.github.io
+url: https://ronffy.github.io
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -30,8 +31,8 @@ skip_render:
 
 # Site settings
 # 网站综合内容设置：
-SEOTitle: roonly小贼先生的博客 | roonly's Blog
-header-img: 
+SEOTitle: ronffy小贼先生的博客 | ronffy's Blog
+header-img: img/header-img.png
 sidebar-avatar: img/myface.jpeg
 email: whrjob@sina.com
 
@@ -39,7 +40,7 @@ email: whrjob@sina.com
 # 一些社交平台地址，支持以下几种：
 weibo_username:     roonly
 zhihu_username:     webr
-github_username:    roonly
+github_username:    ronffy
 juejin_username:   5abb7ac8f265da23961271e6
 # facebook_username:  xiaotao.nie.5
 # linkedin_username:  小涛-聂-80964aba
@@ -108,11 +109,11 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: aircloud
+theme: hexo-theme-showtext
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/roonly/roonly.github.io.git
+  repo: https://github.com/ronffy/ronffy.github.io.git
   branch: master
