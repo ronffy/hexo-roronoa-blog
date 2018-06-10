@@ -9,27 +9,6 @@ tags: [axios, promise, xhr, javascript]
 
 [axios](https://github.com/axios/axios) 是一个基于 Promise 的http请求库，可以用在浏览器和node.js中，目前在github上有 42K 的star数
 
-### 分析axios - 目录
-
--   [axios项目目录结构](#axios项目目录结构)
--   [名词解释](#名词解释)
--   [axios内部的运作流程图](#axios内部的运作流程图)
--   [工具方法简单介绍](#工具方法简单介绍)
--   [axios为何会有多种使用方式](#axios为何会有多种使用方式)
--   [用户配置的config是怎么起作用的](#用户配置的config是怎么起作用的)
--   [axios.prototype.request](#axios.prototype.request)
--   [如何拦截请求响应并修改请求参数修改响应数据](#如何拦截请求响应并修改请求参数修改响应数据)
--   [dispatchrequest都做了哪些事](#dispatchrequest都做了哪些事)
--   [axios是如何用promise搭起基于xhr的异步桥梁的](#axios是如何用promise搭起基于xhr的异步桥梁的)
--   [数据转换器-转换请求与响应数据](#数据转换器-转换请求与响应数据)
--   [自动转换json数据](#自动转换json数据)
--   [header设置](#header设置)
--   [如何取消已经发送的请求](#如何取消已经发送的请求)
--   [跨域携带cookie](#跨域携带cookie)
--   [超时配置及处理](#超时配置及处理)
--   [改写验证成功或失败的规则validatestatus](#改写验证成功或失败的规则validatestatus)
--   [总结](#总结)
-
 ### 备注
 
 1. 每一小节都会从两个方面介绍：如何使用 -> 源码分析
