@@ -36,5 +36,4 @@ layout: about
 
 ### 我的生活照
 ![](/img/myself1.jpeg)
-![](/img/myself2.jpeg)
 ![](/img/myself3.jpeg)
