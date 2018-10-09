@@ -25,4 +25,7 @@ npm start
 
 如何部署
 
+```shell
+npm run deploy
+```
 
