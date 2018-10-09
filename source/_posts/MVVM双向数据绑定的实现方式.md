@@ -3,7 +3,7 @@ title: MVVM双向数据绑定的实现方式
 date: 2018-10-09 02:30:00
 keyword: MVVM
 tags: [MVVM]
-author: [imaoda]
+author: imaoda
 author-zone: https://github.com/imaoda
 author-img: /img/author/imaoda.jpeg
 ---
