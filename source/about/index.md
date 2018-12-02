@@ -19,9 +19,8 @@ layout: about
 #### 了解我
 
 -  [github](https://github.com/ronffy)
--  [segmentfault](https://segmentfault.com/u/wanghairong)
+-  [segmentfault](https://segmentfault.com/u/ronffy)
 -  [掘金](https://juejin.im/user/5abb7ac8f265da23961271e6)
--  [知乎](https://www.zhihu.com/people/webr)
 -  [网易云音乐](https://music.163.com/#/user/home?id=475802760)
 
 ---------------------------------------
