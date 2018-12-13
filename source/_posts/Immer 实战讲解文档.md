@@ -1,5 +1,5 @@
 ---
-title: Immer 实战讲解
+title: Immer 实战讲解文档
 date: 2018-12-05 02:30:00
 keyword: Immer
 tags: [Immer]
@@ -71,7 +71,7 @@ o4.p.x.push(1); // currentState 被修改了
 1. 深度拷贝，但是深拷贝的成本较高，会影响性能；
 2. [ImmutableJS](https://github.com/facebook/immutable-js)，非常棒的一个不可变数据结构的库，可以解决上面的问题，But，跟 Immer 比起来，ImmutableJS 有两个较大的不足：  
   - 需要使用者学习它的数据结构操作方式，没有 Immer 提供的使用原生对象的操作方式简单、易用；
-  - 它的操作结果需要通过`toJS`方法才能得到原生对象，这使得在操作一个对象的时候，时刻要主要操作的是原生对象还是 ImmutableJS 的返回结果，稍不注意，就会产生意想不到的 bug。
+  - 它的操作结果需要通过`toJS`方法才能得到原生对象，这使得在操作一个对象的时候，时刻要注意操作的是原生对象还是 ImmutableJS 的返回结果，稍不注意，就会产生意想不到的 bug。
 
 看来目前已知的解决方案，我们都不甚满意，那么 Immer 又有什么高明之处呢？
 
@@ -98,7 +98,7 @@ let o1 = produce(currentState, draft => {
 Fix Q2
 ```js
 import produce from 'immer';
-fn(currentState); // currentState 被修改了
+fn(currentState);
 function fn(o) {
   return produce(o, draft => {
     draft.p1 = 1;
