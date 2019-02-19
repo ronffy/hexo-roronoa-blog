@@ -40,10 +40,11 @@ email: ronffy@sina.com
 
 # SNS settings
 # 一些社交平台地址，支持以下几种：
-weibo_username:     ronffy
 zhihu_username:     webr
 github_username:    ronffy
 juejin_username:   5abb7ac8f265da23961271e6
+weibo_username:     ronffy
+douban_username:     ronffy
 # facebook_username:  xiaotao.nie.5
 # linkedin_username:  小涛-聂-80964aba
 
@@ -53,10 +54,12 @@ friends: [
   {
     title: "stackoverflow",
     href: "https://stackoverflow.com/"
-  },{
+  },
+  {
     title: "掘金",
     href: "https://juejin.im/"
-  },{
+  },
+  {
     title: "segmentfault",
     href: "https://segmentfault.com/"
   }

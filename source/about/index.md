@@ -8,7 +8,7 @@ layout: about
 
 #### 关于我
 
--  名称：Ronffy
+-  名称：ronffy
 -  网名：小贼先生
 -  性别：男，取向女
 -  职业：WEB前端开发工程师
@@ -19,8 +19,9 @@ layout: about
 #### 了解我
 
 -  [github](https://github.com/ronffy)
--  [segmentfault](https://segmentfault.com/u/ronffy)
 -  [掘金](https://juejin.im/user/5abb7ac8f265da23961271e6)
+-  [segmentfault](https://segmentfault.com/u/ronffy)
+-  [豆瓣](https://www.douban.com/people/ronffy/)
 -  [网易云音乐](https://music.163.com/#/user/home?id=475802760)
 
 ---------------------------------------
