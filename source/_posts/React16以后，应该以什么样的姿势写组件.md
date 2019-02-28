@@ -7,57 +7,40 @@ describe: React16以后，都增加了哪些新功能呢
 author: ronffy
 ---
 
-## 前言
-
-到了 v16.0.0 的时候，React 有一个重大改变 —— 核心代码被重写，引入了叫 Fiber 这个全新的架构，也有很多应用层的改变，本篇文章将对应用层新的功能逐一介绍。
-
-React16 后的各功能点是每个版本陆陆续续迭代增加的，本篇文章的讲解是建立在 `16.6.0` 版本上的。
-
-本篇文章主旨在介绍 React16 之后版本中新增或修改的地方，所以对于 React16 之前版本的功能，本篇文章当作您已充分了解了，故不再赘述。
+> React16 后的各功能点是多个版本陆陆续续迭代增加的，本篇文章的讲解是建立在 `16.6.0` 版本上
+> 本篇文章主旨在介绍 React16 之后版本中新增或修改的地方，所以对于 React16 之前版本的功能，本篇文章当作您已充分了解了，不再赘述
 
 ## 更新概览
-
-从 React v16.0 ~ React v16.6 的更新概览
+从 React v16.0 ~ React v16.6 的更新概览（只涉及部分常用api）：
 
 - React v16.0  
 
-render 支持返回数组和字符串、Error Boundaries、createPortal、支持自定义 DOM 属性、减少文件体积、fiber
-
-- React v16.1  
-
-react-call-return
-
-- React v16.2  
-
-Fragment
+1. render 支持返回数组和字符串
+2. 支持自定义 DOM 属性
+3. 减少文件体积
 
 - React v16.3  
 
-createContext、createRef、forwardRef、生命周期函数的更新、Strict Mode
+1. createContext
+2. createRef、
+3. 生命周期函数的更新
 
 - React v16.4  
 
-Pointer Events、update getDerivedStateFromProps
+更新 getDerivedStateFromProps
 
-- React v16.5  
-
-Profiler
 
 - React v16.6  
 
-memo、lazy、Suspense、static contextType、static getDerivedStateFromError()
+1. memo
+2. lazy
+3. Suspense
+4. static contextType
+5. static getDerivedStateFromError()
 
 - React v16.7（~Q1 2019）  
 
 Hooks
-
-- React v16.8（~Q2 2019）  
-
-Concurrent Rendering
-
-- React v16.9（~mid 2019）  
-
-Suspense for Data Fetching
 
 接下来将针对影响较大，使用频率较高的更新点逐一讲解。
 
@@ -101,7 +84,7 @@ React生命周期分为三个阶段：挂载、更新、卸载，React16后又�
 3. `render`
 4. `componentDidMount`
 
-`render`和`componentDidMount`较 React16 之前无变化，不再过多介绍。对于挂载过程，我们着重看下`constructor`、`componentWillMount`和`static getDerivedStateFromProps`。
+`render`和`componentDidMount`较 React16 之前无变化。对于挂载过程，我们着重看下`constructor`、`componentWillMount`和`static getDerivedStateFromProps`。
 
 #### constructor
 
@@ -138,7 +121,7 @@ class C extends React.Component {
 }
 ```
 
-所以，React16 以后用到`constructor`的场景会少很多。
+所以，React16 以后用到`constructor`的场景会变少。
 
 
 #### componentWillMount
@@ -190,7 +173,7 @@ class C extends React.Component {
 4. `getSnapshotBeforeUpdate`
 5. `componentDidUpdate`
 
-`static getDerivedStateFromProps`已经介绍过了，而其他的几个生命周期函数与 React16 之前基本无异，所以这里主要介绍下`getSnapshotBeforeUpdate`。
+`static getDerivedStateFromProps`前面已经介绍过了，而其他的几个生命周期函数与 React16 之前基本无异，所以这里主要介绍下`getSnapshotBeforeUpdate`。
 
 #### getSnapshotBeforeUpdate
 
@@ -201,7 +184,7 @@ class C extends React.Component {
 - 语法
 ```ts
 class C extends React.Component {
-   (prevProps, prevState): Snapshot {
+  getSnapshotBeforeUpdate (prevProps, prevState): Snapshot {
     
   }
   componentDidUpdate(prevProps, prevState, snapshot) {
@@ -210,40 +193,53 @@ class C extends React.Component {
 }
 ```
 
-问：它有什么能耐，可以顶替掉 `componentWillUpdate` ?
-
-
-
+`getSnapshotBeforeUpdate` 的使用场景一般是获取组建更新之前的滚动条位置。
 
 
 ### 卸载
 
 `componentWillUnmount`
 
+较之前无变化
+
 
 ### 异常
 
-`componentDidCatch` 这个函数是 React16 新增的，用于捕获组件树的异常，如果`render()`函数抛出错误，则会触发该函数。
+`componentDidCatch` 这个函数是 React16 新增的，用于捕获组件树的异常，如果`render()`函数抛出错误，则会触发该函数。可以按照 `try catch` 来理解和使用，在可能出现错误的地方，使用封装好的包含 `componentDidCatch` 生命周期的组建包裹可能出错的组件。
 
 ```js
-class PotentialError extends React.Component {   
-  constructor(props) {     
-    super(props);     
-    this.state = { error: false };
+class PotentialError extends React.Component {
+  state = {
+    error: false,
   }
-  componentDidCatch(error, info) {     
-    this.setState({ error, info });
+  componentDidCatch(error, info) {
+    console.error(info);
+    this.setState({
+      error
+    });
   }
   render() {
     if (this.state.error) {
-      return <h1>Error: {this.state.error.toString()}</h1>;
+      return <h1>出错了，请打卡控制台查看详细错误！</h1>;
     }
     return this.props.children;   
   } 
 }
 ```
 
-### 新生命周期demo
+
+如：
+```js
+const Demo = () => (
+  <PotentialError>
+    <div>{{a: 1}}</div>
+  </PotentialError>
+)
+```
+这样，`Demo` 组件即使直接使用对象作为子组件也不会报错了，因为被 `PotentialError` 接收了。
+
+
+### 新生命周期的完整demo
 
 看看穿上新生命周期这身新衣服后的样子吧
 
