@@ -15,28 +15,28 @@ author: ronffy
 
 - React v16.0  
 
-1. render 支持返回数组和字符串
+1. `render`支持返回数组和字符串
 2. 支持自定义 DOM 属性
 3. 减少文件体积
 
 - React v16.3  
 
-1. createContext
-2. createRef、
+1. `createContext`
+2. `createRef`
 3. 生命周期函数的更新
 
 - React v16.4  
 
-更新 getDerivedStateFromProps
+更新 `getDerivedStateFromProps`
 
 
 - React v16.6  
 
-1. memo
-2. lazy
+1. `memo`
+2. `lazy`
 3. Suspense
-4. static contextType
-5. static getDerivedStateFromError()
+4. `static contextType`
+5. `static getDerivedStateFromError`
 
 - React v16.7（~Q1 2019）  
 
@@ -73,7 +73,7 @@ const C = React.memo(props => {
 
 React生命周期分为三个阶段：挂载、更新、卸载，React16后又多了一个异常，我们一一看下。
 
-![](/img/post/react16/new-ing.jpg)
+![](https://user-gold-cdn.xitu.io/2019/3/1/16938c9025dda3af?w=1674&h=917&f=jpeg&s=200487)
 
 ### 挂载
 
@@ -89,7 +89,7 @@ React生命周期分为三个阶段：挂载、更新、卸载，React16后又�
 #### constructor
 
 1. 初始化 state  
-  注意：应避免使用props给state赋值，这样的话， state 的初始化可以提到constructor外面处理  
+  注意：应避免使用`props`给`state`赋值，这样的话， `state`的初始化可以提到`constructor`外面处理  
 ```js
 constructor(props) {
   super(props);
@@ -126,20 +126,21 @@ class C extends React.Component {
 
 #### componentWillMount
 
-可以看到，`componentWillMount`在 react16 中被“删掉”了（这样说其实是有问题的，因为 react 并未真正删除该生命周期函数，只是告诫开发者，该函数在未来版本中会被废弃掉），那么问题就出现了，原先在这个生命周期中的做的事情，现在该放到哪里去做呢？
+可以看到，`componentWillMount`在 React16 中被“删掉”了（这样说其实是有问题的，因为 React 并未真正删除该生命周期函数，只是告诫开发者，该函数在未来版本中会被废弃掉），那么问题就出现了，原先在这个生命周期中的做的事情，现在该放到哪里去做呢？
 
-首先问自己一个问题，原先的时候都在这个生命周期里做什么？答案是大部分时候会在这里做AJAX请求，然后执行 setState 重新渲染。
+首先问自己一个问题，原先的时候都在这个生命周期里做什么？答案是大部分时候会在这里做 AJAX 请求，然后执行`setState`重新渲染。
 
-然而在`componentWillMount`里做AJAX请求实在不是一个明智之举，因为对于同构项目中，`componentWillMount`是会被调用的。
+然而在`componentWillMount`里做 AJAX 请求实在不是一个明智之举，因为对于同构项目中，`componentWillMount`是会被调用的。
 
-还有人会在这里面初始化 state ，关于 state 的初始化，请参看楼上小节。
+还有人会在这里面初始化`state`，关于`state`的初始化，请参看楼上小节。
 
 综上所述，`componentWillMount`其实本来没有什么主要作用，如果你的代码规范，去掉的话，不会对现在的项目产生什么影响。
 
 
 #### static getDerivedStateFromProps
 
-上面我们讲到，应避免使用props给state赋值，但是在 React16 前我们都是这么做的，现在如果不让这么操作了，那该在哪里处理这块逻辑呢？ React16 给出的答案就是 `static getDerivedStateFromProps` ，挂载组件时，该静态方法会在`render`前执行。
+上面我们讲到，应避免使用`props`给`state`赋值，但是在 React16 前我们都是这么做的，现在如果不让这么操作了，那该在哪里处理这块逻辑呢？ React16 给出的答案就是 `static getDerivedStateFromProps`。  
+挂载组件时，该静态方法会在`render`前执行；更新组件时，该静态方法会在`shouldComponentUpdate`前执行。
 
 ```ts
 class C extends React.Component {
@@ -156,7 +157,7 @@ class C extends React.Component {
 }
 ```
 
-`getDerivedStateFromProps`的返回值将作为setState的参数，如果返回null，则不更新state，不能返回object 或 null 以外的值，否则会警告。
+`getDerivedStateFromProps`的返回值将作为`setState`的参数，如果返回null，则不更新state，不能返回object 或 null 以外的值，否则会警告。
 
 `getDerivedStateFromProps`是一个静态方法，是拿不到实例`this`的，所以开发者应该将该函数设计成纯函数。
 
@@ -177,11 +178,11 @@ class C extends React.Component {
 
 #### getSnapshotBeforeUpdate
 
-在 react 更新 dom 之前调用，此时 state 已更新；
-返回值作为 componentDidUpdate 的第3个参数；
-一般用于获取 render 之前的 dom 数据
+在 React 更新 DOM 之前调用，此时`state`已更新；
+返回值作为`componentDidUpdate`的第3个参数；
+一般用于获取`render`之前的 DOM 数据
 
-- 语法
+语法：
 ```ts
 class C extends React.Component {
   getSnapshotBeforeUpdate (prevProps, prevState): Snapshot {
@@ -200,7 +201,7 @@ class C extends React.Component {
 
 `componentWillUnmount`
 
-较之前无变化
+较之前无变化。
 
 
 ### 异常
